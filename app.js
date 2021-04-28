@@ -15,7 +15,7 @@ function q1(uAnswer)
   switch (uAnswer.toUpperCase()) {
   case 'YES':
   case 'Y':
-    alert('You Are Rock');
+    alert('Yes, my lovely country');
     score++;
     break;
   case 'NO':
