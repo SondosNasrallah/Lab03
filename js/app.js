@@ -111,48 +111,58 @@ console.log(score);
 
 //Question6
 
-let nuMber=prompt('guess my lucky number');
-console.log(nuMber);
+let userInput = parseInt(prompt('My Lucky number is between 1 to 10 and it is a single number'));
+let count = 0;
 
-let counter = 0;
-if (counter == 4) {
-    alert('sorry you run out of attempts, The correct answer is 3!');
+for (let i = 0; i < 4; i++) {
+  if (userInput > 10) {
+    alert('You Missed it, it is less than ' + userInput);
+    userInput = prompt('Guess again!');
+    count++;
+  } else if (userInput < 10) {
+    alert('wrong, it is Higher than ');
+    userInput = prompt('Guess again!');
+    count++;
+  } else {
+    score++;
+    alert('Bravo Your score now is ' + score);
+    break;
+  }
 }
-
-while (counter < 4 && nuMber !==3) {
-    
-    if (nuMber < 10) {
-       prompt ('you guessed too high', 'try again with a number between 1-10');
-        counter++    
-
-    }else if (nuMber > 10) {
-        prompt ('you guessed too low', 'try again with a number between 1-10')
-        counter++;
-    }
+if (count == 4) {
+  alert('The number is 17 ');
 }
 console.log(score);
 
 //Question7
 
-/*let favFruit =['apple', 'banana', 'mango', 'strwaberry', 'orange'];
-let favFruit = prompt('what is my favorite fruit?');
-let guess = favFruit.toLocaleLowerCase();
-
-for (var i = 0; i<favFruit.length; i++) {
-    if (guess === favFruit[i]) {
-        alert ('correct!');
-        score++
-
-        i=6;
-        break;
-    }
+let favFruit = ['APPLE', 'BANANA', 'GRAPES', 'MELON', 'STRAWBERRY', 'ORANGE'];
+let answer = prompt('what is my favorite fruit?');
+answer = answer.toUpperCase();
+let counter = 0;
+for (let i = 0; i < 6; i++) {
+  if (answer === favFruit[0] || answer === favFruit[1] || answer === favFruit[2] || answer === favFruit[3] || answer ===favFruit[4] || answer === favFruit[5]) {
+    alert('Correct ' + answer + ' is one of the favorite fruit');
+    score++;
+    break;
+  } else {
+    alert('No ' + answer + ' is not my favorite fruit');
+    answer = prompt('Please, Guess again!');
+    counter++;
+  }
 }
-   if (i == 6) {
-       alert ('sorry, wrong answer, try again');
-   }
-alert ('My favorite fruits are: apple, banana, mango, strwaberry, orange');
 
-console.log(score);*/
+if (counter == 6) {
+  alert('You have consumed all your guesses and my favorite fruit are the following \nAPPLE, BANANA, GRAPES, MELON, STRAWBERRY, ORANGE');
+}
+console.log(score);
 
 
-alert('Welcome' +' '+ userName + 'You did Great!');
+
+alert(userName + ' Your score is ' + score);
+
+if (score > 4) {
+  alert(userName + ' it seems that you are me');
+} else if (score <= 4) {
+  alert(userName + ' , we must to get to know each other more');
+}
