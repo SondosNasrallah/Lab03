@@ -1,4 +1,4 @@
-/* eslint-disable eqeqeq */
+// /* eslint-disable eqeqeq */
 'use strict';
 
 let userName = prompt('What is your name?');
@@ -7,7 +7,7 @@ document.write('Welcome' +' '+ userName);
 
 let score=0;
 
-//Question1
+// //Question1
 let question1 = prompt('am I from Jordan?');
 
 function q1(uAnswer)
@@ -20,7 +20,7 @@ function q1(uAnswer)
     break;
   case 'NO':
   case 'N':
-    alert('You lost a point');
+    alert('wrong answer, I am from Jordan.');
     score--;
     break;
   }
@@ -28,7 +28,7 @@ function q1(uAnswer)
 q1(question1);
 console.log(score);
 
-// // // //Question2
+// //Question2
 
 
 let question2 = prompt('Am I working currently?');
@@ -51,7 +51,7 @@ q2(question2);
 console.log(score);
 
 
-//Question3
+// //Question3
 
 
 let question3 = prompt('Is My Favorite color Violet?');
@@ -74,7 +74,7 @@ q3(question3);
 console.log(score);
 
 
-// // //Question4
+//Question4
 
 let question4 = prompt('Is my age seems to be more than 25?');
 function q4(uAnswer4)
@@ -95,28 +95,8 @@ function q4(uAnswer4)
 q4(question4);
 console.log(score);
 
-// //Question5
+// // Question5
 
-let userInput = parseInt(prompt('My Lucky number is between 1 to 10 and it is a single number'));
-let count = 0;
-
-for (let i = 0; i < 4; i++) {
-  if (userInput > 10) {
-    alert('You Missed it, it is less than ' + userInput);
-    userInput = prompt('Guess again!');
-    count++;
-  } else if (userInput < 10) {
-    alert('wrong, it is Higher than ');
-    userInput = prompt('Guess again!');
-    count++;
-  } else {
-    score++;
-    alert('Bravo Your score now is ' + score);
-    break;
-  }
-}
-if (count == 4) {
-  alert('The number is 17 ');
 
 let question5 = prompt('is it correct that my favorite hobby is Drawing?');
 
@@ -137,33 +117,30 @@ function q5(uAnswer5){
 q5(question5);
 console.log(score);
 
+
 // Question 6
 
-let userInput = Number(prompt('Please guess my number?'));
-let xCounter = 0;
+let userInput = parseInt(prompt('My number is between 1 to 10 and it is a single number'));
+let count = 0;
 
-function guess(userNumber){
-  for (let i = 0; i < 4; i++) {
-    if (userInput > 3) {
-      alert('Your guess is wrong and it is too high ');
-      userNumber = prompt('Guess again! , the number between 0 - 10');
-      xCounter++;
-    } else if (userNumber < 3) {
-      alert('Yoru guess is wrong and it is too low ');
-      userNumber = prompt('Guess again! , the number between 0 - 10');
-      xCounter++;
-    } else {
-      alert('Correct ' + userNumber + ' is my favorite number');
-      score++;
-      break;
-    }
+for (let i = 0; i < 4; i++) {
+  if (userInput > 3) {
+    alert('wrong answer, it is less than ' + userInput);
+    userInput = prompt('Guess again!');
+    count++;
+  } else if (userInput < 3) {
+    alert('wrong answer, it is Higher than ' + userInput);
+    userInput = prompt('Guess again!');
+    count++;
+  } else {
+    score++;
+    alert('correct!');
+    break;
   }
-  if (xCounter == 4) {
-    alert('The number is 3');
-  }
-
 }
-guess(userInput);
+if (count == 4) {
+  alert('The number is 3 ');
+}
 console.log(score);
 
 
@@ -193,39 +170,5 @@ console.log(score);
 
 
 
-alert(userName + ' Your score is ' + score);
+alert('welcome' + userName + ' Your score is ' + score);
 
-if (score > 4) {
-  alert(userName + ' it seems that you are me');
-} else if (score <= 4) {
-  alert(userName + ' , we must to get to know each other more');
-}
-
-let favFruit = ['APPLE', 'BANANA', 'MANGO', 'STRAWBERRY', 'ORANGE', 'GRAPES'];
-let userAnswer = prompt('what is my favorite fruit?');
-userAnswer = userAnswer.toUpperCase();
-let counter = 0;
-
-function fruit(uFruit){
-  for (let i = 0; i < 6; i++) {
-    if (uFruit === favFruit[0] || uFruit === favFruit[1] || uFruit === favFruit[2] || uFruit === favFruit[3] || uFruit === favFruit[4] || uFruit === favFruit[5]) {
-      alert('correct!');
-      //   score++;
-      break;
-    } else {
-      alert('sorry, wrong answer, try again');
-      userAnswer =prompt('what is my favorite fruit?');
-      counter++;
-    //   alert('My favorite fruits are: apple, banana, mango, strwaberry, orange');
-    }
-    if (counter == 6) {
-      alert('Sorry you guess 6 wrong asnwers \nAPPLE, BANANA, MANGO, STRAWBERRY, ORANGE, GRAPES');
-    }
-  }
-}
-fruit(userAnswer);
-console.log(score);
-
-alert('Welcome ' + userName + ' You did Great!');
-alert('Yor Score is ' + score);
-}
