@@ -172,3 +172,9 @@ console.log(score);
 
 alert('welcome' + userName + ' Your score is ' + score);
 
+
+if (score > 4) {
+  alert(userName + ' it seems that you know me well');
+} else if (score <= 4) {
+  alert(userName + ' , we must to get to know each other more');
+}
